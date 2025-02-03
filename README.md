@@ -1,2 +1,2 @@
 # jakala-assignment
-Post job interview FED task - Hero Video Component
+Post job interview FED assignment - Hero Video Component
