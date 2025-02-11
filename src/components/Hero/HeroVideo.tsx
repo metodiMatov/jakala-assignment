@@ -5,6 +5,11 @@ import { ErrorBoundary } from "react-error-boundary";
 import useVideoPlayback from "../../hooks/useVideoPlayback";
 import { HeroVideoProps } from "../types";
 
+/**
+ * A hero section with a video player and a heading group.
+ *
+ * The component plays the video automatically on viewport entry.
+ */
 const HeroVideo: React.FC<HeroVideoProps> = (props: HeroVideoProps) => {
   const { videoId = "", heading = "", subtitle = "", btnText = "" } = props;
   const { wrapperRef, playerRef } = useVideoPlayback({
@@ -34,7 +39,7 @@ const HeroVideo: React.FC<HeroVideoProps> = (props: HeroVideoProps) => {
               {heading}
             </h1>
             <p
-              className={styles["video-player__h-section__text h3"]}
+              className={`${styles["video-player__h-section__text"]} ${styles.h3}`}
               aria-roledescription="subtitle"
             >
               {subtitle}
