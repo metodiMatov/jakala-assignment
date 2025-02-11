@@ -9,12 +9,11 @@
 * Typescript
 * Sass
 
-## Run
+## Run on project root level the following scripts:
 
-### On project root level run:
-``` npm install ```
-### On project root level following scripts:
+``` npm install ```\
 ``` npm run build ```\
 ``` npm run preview ```
+
 ### For development build run the following script:
 ``` npm run dev ```
