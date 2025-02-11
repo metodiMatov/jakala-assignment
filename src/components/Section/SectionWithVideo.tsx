@@ -1,17 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import { SectionWithVideoProps } from "../types";
 import styles from "../Video.module.scss";
-import useYouTubePlayer from "../../hooks/useYouTubePlayer.ts";
-import useInViewport from "../../hooks/useInViewport.ts";
+import useVideoPlayback from "../../hooks/useVideoPlayback";
 import { v4 as uuidv4 } from "uuid";
-
-export interface SectionWithVideoProps {
-  heading?: string;
-  text?: string;
-  videoId?: string;
-  autoplay?: boolean;
-  controls?: boolean;
-  playOnScroll?: boolean;
-}
 
 const SectionWithVideo: React.FC<SectionWithVideoProps> = (
   props: SectionWithVideoProps
@@ -26,35 +17,14 @@ const SectionWithVideo: React.FC<SectionWithVideoProps> = (
     playOnScroll = false,
   } = props;
 
-  const { playerRef, player } = useYouTubePlayer({
-    videoId: videoId,
-    height: 1000,
-    autoplay: autoplay,
-    controls: controls,
+  const { wrapperRef, playerRef } = useVideoPlayback({
+    videoId,
+    autoplay,
+    controls,
     mute: playOnScroll,
+    playOnScroll,
+    viewportThreshold: 0.4,
   });
-
-  const wprRef = useRef<HTMLDivElement>(null);
-  const isInView = useInViewport({
-    elementRef: wprRef,
-    threshold: 0.4,
-  });
-
-  useEffect(() => {
-    if (!player || !playOnScroll) {
-      return;
-    }
-
-    const timeoutId = setTimeout(() => {
-      if (isInView) {
-        player.playVideo();
-      } else {
-        player.pauseVideo();
-      }
-    }, 0);
-
-    return () => clearTimeout(timeoutId);
-  }, [isInView, player, playOnScroll]);
 
   return (
     <section
@@ -73,7 +43,7 @@ const SectionWithVideo: React.FC<SectionWithVideoProps> = (
             <h2 className={styles["video-section__heading"]}>{heading}</h2>
             <p className={styles["video-section__text"]}>{text}</p>
           </hgroup>
-          <div ref={wprRef} className={styles["video-wpr"]}>
+          <div ref={wrapperRef} className={styles["video-wpr"]}>
             <div ref={playerRef} id={`ytplayer-${videoId}`}></div>
           </div>
         </div>

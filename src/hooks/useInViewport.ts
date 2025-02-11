@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-
-interface UseInViewportOptions {
-  threshold?: number;
-  elementRef?: React.RefObject<HTMLElement>;
-}
+import { UseInViewportOptions } from "../components/types";
 
 const useInViewport = (props: UseInViewportOptions) => {
   const [isInView, setIsInView] = useState(false);

@@ -1,46 +1,20 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import EllipseSvg from "../../icons/ellipse";
 import styles from "../Video.module.scss";
 import { ErrorBoundary } from "react-error-boundary";
-import useYouTubePlayer from "../../hooks/useYouTubePlayer.ts";
-import useInViewport from "../../hooks/useInViewport.ts";
-
-interface HeroVideoProps {
-  videoId?: string;
-  heading?: string;
-  subtitle?: string;
-  btnText?: string;
-}
+import useVideoPlayback from "../../hooks/useVideoPlayback";
+import { HeroVideoProps } from "../types";
 
 const HeroVideo: React.FC<HeroVideoProps> = (props: HeroVideoProps) => {
   const { videoId = "", heading = "", subtitle = "", btnText = "" } = props;
-  const { playerRef, player } = useYouTubePlayer({
+  const { wrapperRef, playerRef } = useVideoPlayback({
     videoId,
-    height: 1000,
     autoplay: true,
     controls: false,
     mute: true,
+    playOnScroll: true,
+    viewportThreshold: 0.3,
   });
-  const wprRef = useRef<HTMLDivElement>(null);
-  const isInView = useInViewport({
-    elementRef: wprRef,
-    threshold: 0.3,
-  });
-
-  useEffect(() => {
-    if (!player) {
-      return;
-    }
-    const timeoutId = setTimeout(() => {
-      if (isInView) {
-        player.playVideo();
-      } else {
-        player.pauseVideo();
-      }
-    }, 0);
-
-    return () => clearTimeout(timeoutId);
-  }, [isInView, player]);
 
   return (
     <section
@@ -48,7 +22,7 @@ const HeroVideo: React.FC<HeroVideoProps> = (props: HeroVideoProps) => {
       aria-live="polite"
       role="presentation"
     >
-      <div ref={wprRef} className={styles["video-player"]}>
+      <div ref={wrapperRef} className={styles["video-player"]}>
         <div className="container">
           <hgroup
             id="hero-section-heading"
@@ -81,7 +55,7 @@ const HeroVideo: React.FC<HeroVideoProps> = (props: HeroVideoProps) => {
             </div>
           }
         >
-          <div ref={playerRef} id={`ytplayer-${videoId}`}></div>;
+          <div ref={playerRef} id={`ytplayer-${videoId}`}></div>
         </ErrorBoundary>
       </div>
     </section>

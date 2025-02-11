@@ -1,15 +1,9 @@
-import { ReactNode, Suspense, useRef } from "react";
+import { Suspense, useRef } from "react";
 import useFirstViewportEntry from "../../hooks/useFirstViewportEntery";
 import { ErrorBoundary } from "react-error-boundary";
 import styles from "./Error.module.scss";
+import { RenderOnViewportEntryProps } from "../types";
 
-interface RenderOnViewportEntryProps {
-  children: ReactNode;
-  threshold: number;
-  root?: Element | Document | null | undefined;
-  rootMargin?: string;
-  wrappedDivProps?: null;
-}
 const RenderOnViewportEntry = (props: RenderOnViewportEntryProps) => {
   const {
     children,

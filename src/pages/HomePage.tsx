@@ -1,9 +1,8 @@
 import { lazy, useEffect, useState } from "react";
 import Navigation from "../components/Navigation/Navigation.tsx";
-import { SectionWithVideoProps } from "../components/Section/SectionWithVideo.tsx";
-import { CONSTANTS } from "../constants";
 import RenderOnViewportEntry from "../components/Renderer/RenderOnViewportEntry.tsx";
-// import "../styles/components/_skip-to-content.scss";
+import { CONSTANTS } from "../constants";
+import { SectionWithVideoProps } from "../components/types.ts";
 
 const HeroVideo = lazy(() => import("../components/Hero/HeroVideo.tsx"));
 const SectionWithVideo = lazy(

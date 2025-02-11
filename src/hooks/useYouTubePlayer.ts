@@ -1,14 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import useYouTubeAPI from "./useYouTubeAPI";
-
-interface YouTubePlayerOptions {
-  videoId: string;
-  width?: number;
-  height?: number;
-  autoplay?: boolean;
-  controls?: boolean;
-  mute?: boolean;
-}
+import { YouTubePlayerOptions } from "../components/types";
 
 const useYouTubePlayer = (props: YouTubePlayerOptions) => {
   const playerRef = useRef<HTMLDivElement | null>(null);
