@@ -1,0 +1,136 @@
+@use "../utilities/variables" as *;
+@use "../utilities/breakpoints" as *;
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: $outfit-light, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: $white;
+  background-color: $warm-black;
+  line-height: 25.2px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+}
+
+h1,
+.h1 {
+  font-family: $outfit-regular, sans-serif;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: 0.0012em;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  text-align: left;
+}
+
+h2,
+.h2 {
+  font-family: $outfit-regular, sans-serif;
+  font-weight: 400;
+  line-height: 51.52px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0 0 24px 0;
+}
+
+h3,
+.h3 {
+  font-family: $outfit-regular, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.0012em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+p,
+.p {
+  font-family: $outfit-light, sans-serif;
+  font-weight: 300;
+  line-height: 25.2px;
+  letter-spacing: 0.0012em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+@include respond-to("xs") {
+  h1,
+  .h1 {
+    font-size: 42px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 32px;
+    margin: 0 0 18px 0;
+  }
+
+  h3,
+  .h3 {
+    font-size: 16px;
+  }
+
+  p,
+  .p {
+    font-size: 16px;
+  }
+}
+
+@include respond-to("md") {
+  h1,
+  .h1 {
+    font-size: 52px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 42px;
+    margin: 0 0 18px 0;
+  }
+
+  h3,
+  .h3 {
+    font-size: 20px;
+  }
+
+  p,
+  .p {
+    font-size: 16px;
+  }
+}
+
+@include respond-to("xl") {
+  h1,
+  .h1 {
+    font-size: 70px;
+    line-height: 84px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 46px;
+    margin: 0 0 24px 0;
+  }
+
+  h3,
+  .h3 {
+    font-size: 24px;
+  }
+
+  p,
+  .p {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,25 @@
+// Grid Configuration
+$grid-columns: 12 !default; // Number of columns
+$gutter-width: 16px !default; // Space between columns
+
+// Responsive Breakpoints
+$breakpoints: (
+  "xs": 320px,
+  // Extra small devices
+  "sm": 576px,
+  // Small devices (phones)
+  "md": 768px,
+  // Medium devices (tablets)
+  "lg": 992px,
+  // Large devices (desktops)
+  "xl": 1440px // Extra large devices,,,,,,,,,,,,,,,,,,,,,,
+) !default;
+
+// Color Palette
+$white: #ffffff !default;
+$warm-black: #222222 !default;
+$white-smoke: #aeaeae !default;
+// Fonts
+$outfit-light: "Outfit-Light" !default;
+$outfit-regular: "Outfit-Regular" !default;
+$outfit-bold: "Outfit-Bold" !default;
