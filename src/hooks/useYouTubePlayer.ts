@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import useYouTubeAPI from "./useYouTubeAPI";
 import { YouTubePlayerOptions } from "../components/types";
 
+/**
+ * Custom hook to create a YouTube player instance.
+ */
 const useYouTubePlayer = (props: YouTubePlayerOptions) => {
   const playerRef = useRef<HTMLDivElement | null>(null);
   const isYouTubeReady = useYouTubeAPI();

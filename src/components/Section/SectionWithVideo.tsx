@@ -4,6 +4,10 @@ import styles from "../Video.module.scss";
 import useVideoPlayback from "../../hooks/useVideoPlayback";
 import { v4 as uuidv4 } from "uuid";
 
+/**
+ * SectionWithVideo component renders a section with a video player.
+ * The component uses the `useVideoPlayback` hook to manage video playback.
+ */
 const SectionWithVideo: React.FC<SectionWithVideoProps> = (
   props: SectionWithVideoProps
 ) => {

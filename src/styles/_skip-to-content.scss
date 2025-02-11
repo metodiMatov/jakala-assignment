@@ -1,7 +1,7 @@
 .skip-to-content {
   position: absolute;
-  width: 200px;
-  height: 30px;
+  width: 0;
+  height: 0;
   top: 0;
   left: calc(50% - 200px);
   background: #e20612;
@@ -14,7 +14,7 @@
   text-align: center;
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
   z-index: 9999;
 
   &:focus {
@@ -23,5 +23,7 @@
     opacity: 1;
     transform: translateY(0);
     visibility: visible;
+    width: 200px;
+    height: 30px;
   }
 }

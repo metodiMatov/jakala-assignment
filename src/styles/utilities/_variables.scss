@@ -1,6 +1,6 @@
 // Grid Configuration
 $grid-columns: 12 !default; // Number of columns
-$gutter-width: 16px !default; // Space between columns
+$gutter-width: 15px !default; // Space between columns
 
 // Responsive Breakpoints
 $breakpoints: (
@@ -12,7 +12,7 @@ $breakpoints: (
   // Medium devices (tablets)
   "lg": 992px,
   // Large devices (desktops)
-  "xl": 1440px // Extra large devices,,,,,,,,,,,,,,,,,,,,,,
+  "xl": 1440px // Extra large devices,,,,,,,,,,,,,,,,,,,,,,,
 ) !default;
 
 // Color Palette

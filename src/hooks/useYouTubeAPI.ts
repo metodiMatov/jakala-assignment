@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 
+/**
+ * Custom hook to load and check the readiness of the YouTube IFrame Player API.
+ */
+
 const useYouTubeAPI = () => {
   const [isYouTubeReady, setIsYouTubeReady] = useState<boolean>(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

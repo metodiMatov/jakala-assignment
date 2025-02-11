@@ -3,6 +3,10 @@ import useYouTubePlayer from "./useYouTubePlayer";
 import useInViewport from "./useInViewport";
 import { UseVideoPlaybackProps } from "../components/types";
 
+/**
+ * Custom hook to manage video playback using YouTube API.
+ */
+
 const useVideoPlayback = ({
   videoId,
   height = 1000,

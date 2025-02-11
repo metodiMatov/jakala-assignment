@@ -3,36 +3,29 @@
 
 .container {
   width: 100%;
-  max-width: 1440px; // Change this to your preferred max width
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 $gutter-width;
 
   &__fluid {
     padding: 0;
   }
 }
 
-// Row: Creates flex container
 .row {
   display: flex;
-  flex-wrap: wrap; // Ensures columns wrap to new line if needed
-  margin-left: -$gutter-width;
-  margin-right: -$gutter-width;
+  flex-wrap: wrap;
 }
 
-// Column: Dynamic column widths
 [class^="col-"] {
   padding-left: $gutter-width;
   padding-right: $gutter-width;
-  flex-grow: 1; // Makes all columns flexible
+  flex-grow: 1;
 }
 
-// Auto-width columns
 .col-auto {
   flex: 1;
 }
 
-// Generate column classes (.col-1 to .col-12)
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
     flex: 0 0 math.percentage(math.div($i, $grid-columns));
@@ -40,7 +33,6 @@
   }
 }
 
-// Responsive Columns (for each breakpoint)
 @each $bp, $size in $breakpoints {
   @media (min-width: $size) {
     @for $i from 1 through $grid-columns {

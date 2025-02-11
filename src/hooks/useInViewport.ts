@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { UseInViewportOptions } from "../components/types";
 
+/**
+ * Custom hook that determines if a specified element is in the viewport.
+ * The hook uses an IntersectionObserver to track visibility changes and
+ * fallbacks to scroll and wheel event listeners to handle fast scrolling
+ * scenarios.
+ */
 const useInViewport = (props: UseInViewportOptions) => {
   const [isInView, setIsInView] = useState(false);
   const { threshold = 0.2, elementRef = undefined } = props;

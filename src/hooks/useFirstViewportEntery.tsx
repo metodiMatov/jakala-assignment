@@ -6,6 +6,10 @@ declare type observerOptionsProps = {
   rootMargin?: string;
 };
 
+/**
+ * Custom hook that tracks the first entry of a component into the viewport.
+ */
+
 const useFirstViewportEntry = (
   componentRef: any,
   observerOptions: observerOptionsProps
