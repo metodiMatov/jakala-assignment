@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 
+/**
+ * Custom hook that tracks the first entry of a component into the viewport.
+ */
 declare type observerOptionsProps = {
   threshold: number;
   root?: Element | Document | null | undefined;
   rootMargin?: string;
 };
 
-/**
- * Custom hook that tracks the first entry of a component into the viewport.
- */
-
 const useFirstViewportEntry = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   componentRef: any,
   observerOptions: observerOptionsProps
 ) => {

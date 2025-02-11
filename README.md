@@ -1,19 +1,22 @@
-# Post job interview FED assignment - Hero Video Component Landing Page
+# Post job interview FED assignment - Landing Page
 
 ## Prerequisites:
-* Node v20.9.0
-* npm v10.1.0
+
+- Node v20.9.0
+- npm v10.1.0
 
 ## Techstack:
-* React 18
-* Typescript
-* Sass
 
-## Run on project root level the following scripts:
+- React 18
+- Typescript
+- Sass
 
-``` npm install ```\
-``` npm run build ```\
-``` npm run preview ```
+## Run in project root level the following scripts:
+
+`npm install`\
+`npm run build`\
+`npm run preview`
 
 ### For development build run the following script:
-``` npm run dev ```
+
+`npm run dev`

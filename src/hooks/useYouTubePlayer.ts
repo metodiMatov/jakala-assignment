@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from "react";
 import useYouTubeAPI from "./useYouTubeAPI";
 import { YouTubePlayerOptions } from "../components/types";
@@ -6,8 +7,6 @@ import { YouTubePlayerOptions } from "../components/types";
  * Custom hook to create a YouTube player instance.
  */
 const useYouTubePlayer = (props: YouTubePlayerOptions) => {
-  const playerRef = useRef<HTMLDivElement | null>(null);
-  const isYouTubeReady = useYouTubeAPI();
   const {
     videoId,
     width = 640,
@@ -16,6 +15,8 @@ const useYouTubePlayer = (props: YouTubePlayerOptions) => {
     controls = true,
     mute = false,
   } = props;
+  const playerRef = useRef<HTMLDivElement | null>(null);
+  const isYouTubeReady = useYouTubeAPI();
   const [player, setPlayer] = useState<any>(null);
   const windowObj = window as any;
 

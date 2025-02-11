@@ -7,15 +7,16 @@ import { UseVideoPlaybackProps } from "../components/types";
  * Custom hook to manage video playback using YouTube API.
  */
 
-const useVideoPlayback = ({
-  videoId,
-  height = 1000,
-  autoplay = false,
-  controls = false,
-  mute = true,
-  playOnScroll = true,
-  viewportThreshold = 0.3,
-}: UseVideoPlaybackProps) => {
+const useVideoPlayback = (props: UseVideoPlaybackProps) => {
+  const {
+    videoId,
+    height = 1000,
+    autoplay = false,
+    controls = false,
+    mute = true,
+    playOnScroll = true,
+    viewportThreshold = 0.3,
+  } = props;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const { playerRef, player } = useYouTubePlayer({
     videoId,
